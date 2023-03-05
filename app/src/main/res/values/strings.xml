@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Ragis_Form_Mate_UI</string>
+    <string name="textview">TextView</string>
 </resources>

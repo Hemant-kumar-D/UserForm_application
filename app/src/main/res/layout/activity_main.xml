@@ -15,16 +15,18 @@
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:padding="5dp"
+        app:startIconDrawable="@drawable/baseline_person_24"
 
         android:id="@+id/edit_fname"
-        app:prefixText="Mr"
-
-
+        app:counterEnabled="true"
         app:errorEnabled="true"
         android:hint="FirstName"
         >
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
+            android:maxLength="15"
+            android:inputType="textCapWords"
+
 
             android:layout_height="wrap_content" />
 
@@ -36,12 +38,14 @@
 
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:padding="5dp"
+            app:counterEnabled="true"
             android:id="@+id/edit_lastname"
             android:hint="LastName"
             >
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:maxLength="10"
+                android:inputType="textCapWords"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -52,11 +56,15 @@
 
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:padding="5dp"
+            app:counterEnabled="true"
+            app:startIconDrawable="@drawable/baseline_add_ic_call_24"
             android:id="@+id/edit_mo.number"
             android:hint="Mo.number"
             >
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
+                android:inputType="number"
+                android:maxLength="10"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -65,11 +73,16 @@
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:padding="5dp"
+            app:startIconDrawable="@drawable/baseline_add_ic_call_24"
             android:id="@+id/edit_Almo.number"
+            app:counterEnabled="true"
             android:hint="Alternet.Number"
             >
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
+                android:inputType="number"
+                android:maxLength="10"
+
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -78,12 +91,16 @@
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:padding="5dp"
+            app:counterEnabled="true"
+            app:startIconDrawable="@drawable/baseline_email_24"
 
             android:id="@+id/edit_email"
             android:hint="E-mail"
             >
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
+                android:inputType="textEmailAddress"
+
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -98,6 +115,8 @@
         </com.google.android.material.textview.MaterialTextView>
         <RadioGroup
             android:layout_width="match_parent"
+            android:id="@+id/rd_group"
+
             android:layout_height="wrap_content">
             <com.google.android.material.radiobutton.MaterialRadioButton
                 android:layout_width="match_parent"
@@ -132,40 +151,44 @@
             android:textStyle="bold"
             android:textColor="@color/purple_200">
         </com.google.android.material.textview.MaterialTextView>
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+
 
 
             <com.google.android.material.checkbox.MaterialCheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/cb_coding"
                 android:text="Coding"
                 android:textStyle="bold"/>
             <com.google.android.material.checkbox.MaterialCheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/cb_play_cricket"
                 android:text="Playing cricket"
                 android:textStyle="bold"/>
             <com.google.android.material.checkbox.MaterialCheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/cb_tavling"
                 android:text="Traveling"
                 android:textStyle="bold"/>
             <com.google.android.material.checkbox.MaterialCheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/cb_reading_nobel"
                 android:text="Reading noble"
                 android:textStyle="bold"/>
             <com.google.android.material.checkbox.MaterialCheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Gaming"
+                android:id="@+id/cb_gaming"
                 android:textStyle="bold"/>
-        </RadioGroup>
+
         <com.google.android.material.button.MaterialButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/rb_submit"
             android:text="Submit"
             android:layout_gravity="center"/>
 
