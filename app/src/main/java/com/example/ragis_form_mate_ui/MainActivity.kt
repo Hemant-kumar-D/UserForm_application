@@ -3,16 +3,20 @@ package com.example.ragis_form_mate_ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.CompoundButton
 import android.widget.RadioGroup
+import android.widget.Toast
+
 import com.example.ragis_form_mate_ui.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener,
-    CompoundButton.OnCheckedChangeListener {
+    CompoundButton.OnCheckedChangeListener, View.OnClickListener {
     private lateinit var binding:ActivityMainBinding   // object hai xml file jo sari id ko hold kerke rakhta hai
     var gender:String?= null
     var arraylist:ArrayList<String> = ArrayList()
-    var isCheked:Boolean=false
+  //  var isCheked:Boolean=false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
@@ -22,38 +26,80 @@ class MainActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener,
         binding.cbCoding.setOnCheckedChangeListener(this)
         binding.cbGaming.setOnCheckedChangeListener(this)
         binding.cbReadingNobel.setOnCheckedChangeListener(this)
-        binding.cbReadingNobel.setOnCheckedChangeListener(this)
+        binding.cbTavling.setOnCheckedChangeListener(this)
         binding.cbPlayCricket.setOnCheckedChangeListener(this)
+
+        binding.rbSubmit.setOnClickListener(this)
 
 
 
 
         // var gender:String=""
+        }
+    override fun onClick(p0: View?) {
+        when(p0?.id){
+            R.id.rb_submit ->{
+                if(binding.editFname.editText!!.text.isEmpty()&&binding.editLastname.editText!!.text.isEmpty()&&binding.editMoNumber.editText!!.text.isEmpty()&&binding.
+                    editAlmoNumber.editText!!.text.isEmpty()&&binding.editEmail.editText!!.text.isEmpty()){
+                    Toast.makeText(this,"Please fill all information",Toast.LENGTH_LONG).show()
+                }
+                else if(binding.editFname.editText!!.text.isEmpty()){
+                    Toast.makeText(this,"Please enter Firstname",Toast.LENGTH_LONG).show()
+                    binding.editFname.requestFocus()
 
+                }
+                else if(binding.editLastname.editText!!.text.isEmpty()){
+                    Toast.makeText(this,"Please enter Lastname",Toast.LENGTH_LONG).show()
+                    binding.editLastname.requestFocus()
 
+                }
+                else if(binding.editMoNumber.editText!!.text.isEmpty()){
+                    Toast.makeText(this,"Please enter Mo.number",Toast.LENGTH_LONG).show()
+                    binding.editMoNumber.requestFocus()
 
+                }
+                else if(binding.editAlmoNumber.editText!!.text.isEmpty()){
+                    Toast.makeText(this,"Please enter Aler.mo.number",Toast.LENGTH_LONG).show()
+                    binding.editAlmoNumber.requestFocus()
 
-        binding.rbSubmit.setOnClickListener{
+                }
+                else if(binding.editEmail.editText!!.text.isEmpty()){
+                    Toast.makeText(this,"Please enter Email",Toast.LENGTH_LONG).show()
+                    binding.editEmail.requestFocus()
+                }
+                else if(binding.editMoNumber.editText?.text.toString().equals(binding.editAlmoNumber.editText!!.text.toString())){
+                    Toast.makeText(this,"plese fill diffrent number",Toast.LENGTH_LONG).show()
+                }
 
-       val name = binding.editFname.editText?.text.toString()
-        val lastname = binding.editLastname.editText?.text.toString()
-        val phone = binding.editMoNumber.editText?.text.toString()
-        val Alerphone = binding.editAlmoNumber.editText?.text.toString()
-        val email = binding.editEmail.editText!!.text.toString()
+                else
+                {
 
-        val intent = Intent(this, Secound_Activity::class.java)
+                    val name = binding.editFname.editText?.text.toString()
+                    val lastname = binding.editLastname.editText?.text.toString()
+                    val phone = binding.editMoNumber.editText?.text.toString()
+                    val Alerphone = binding.editAlmoNumber.editText?.text.toString()
+                    val email = binding.editEmail.editText!!.text.toString()
+                    val intent = Intent(this, Secound_Activity::class.java)
+                    val listname=arraylist.toString().replace("["," ").replace("]"," ")
 
-        intent.putExtra("Name",name)
-        intent.putExtra("lastname", lastname)
-        intent.putExtra("Phone", phone)
-            intent.putExtra("Al.number",Alerphone)
-            intent.putExtra("Email",email)
-            intent.putExtra("Gender",gender)
-            intent.putExtra("Hobbies",arraylist)
-        startActivity(intent)
+                    intent.putExtra("Name", name)
+                    intent.putExtra("lastname", lastname)
+                    intent.putExtra("Phone", phone)
+                    intent.putExtra("Al.number", Alerphone)
+                    intent.putExtra("Email", email)
+                    intent.putExtra("Gender", gender)
+
+                    intent.putExtra("Hobbies", listname)
+                    startActivity(intent)
+
+                }
+            }
+
+        }
     }
 
-    }
+
+
 
     override fun onCheckedChanged(chacked: RadioGroup?, p1: Int) {
 
@@ -131,7 +177,11 @@ class MainActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener,
 
             }
         }
+
     }
+
+
+
 
 }
 

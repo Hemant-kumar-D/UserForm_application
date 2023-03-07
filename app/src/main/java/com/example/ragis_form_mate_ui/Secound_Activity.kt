@@ -21,8 +21,9 @@ class Secound_Activity : AppCompatActivity() {
         val gender=intent.getStringExtra("Gender")
         val hobbie=intent.getStringExtra("Hobbies")
 
-        bindind.textView1.text= "Name->"+name+lastname+"\nMo.NO->"+phone+"\nAlternate.NO->"+alphoe+
-                "\nEmail->"+email+"\nGender->"+gender+"\nHobbies->"+hobbie
+       // bindind.textView1.text= "Name->"+name+lastname+"\nMo.NO->"+phone+"\nAlternate.NO->"+alphoe+
+       //         "\nEmail->"+email+"\nGender->"+gender+"\nHobbies->"+hobbie
+     bindind.info.text= " Name:-  $name $lastname \n Phone No:-  $phone \n Alter.mo.no :- $alphoe  \n Email :- $email  \n Gender :-  $gender \n Hobbies :- $hobbie"
 
 
 

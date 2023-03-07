@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:padding="5dp"
+
         app:startIconDrawable="@drawable/baseline_person_24"
 
         android:id="@+id/edit_fname"
@@ -37,7 +37,8 @@
             android:layout_height="wrap_content"
 
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:padding="5dp"
+
+            app:startIconDrawable="@drawable/baseline_person_24"
             app:counterEnabled="true"
             android:id="@+id/edit_lastname"
             android:hint="LastName"
@@ -55,7 +56,7 @@
             android:layout_height="wrap_content"
 
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:padding="5dp"
+
             app:counterEnabled="true"
             app:startIconDrawable="@drawable/baseline_add_ic_call_24"
             android:id="@+id/edit_mo.number"
@@ -72,10 +73,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:padding="5dp"
+
             app:startIconDrawable="@drawable/baseline_add_ic_call_24"
             android:id="@+id/edit_Almo.number"
             app:counterEnabled="true"
+
             android:hint="Alternet.Number"
             >
             <com.google.android.material.textfield.TextInputEditText
@@ -90,7 +92,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:padding="5dp"
+
             app:counterEnabled="true"
             app:startIconDrawable="@drawable/baseline_email_24"
 
@@ -113,28 +115,44 @@
             android:textStyle="bold"
             android:textColor="@color/purple_200">
         </com.google.android.material.textview.MaterialTextView>
+
+
         <RadioGroup
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:id="@+id/rd_group"
 
+            android:orientation="horizontal"
+            android:weightSum="3"
+
+
             android:layout_height="wrap_content">
+
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rb_malename"
+                    android:layout_width="match_parent"
+                    android:layout_marginRight="20dp"
+
+
+
+                    android:layout_height="wrap_content"
+                    android:text="Male"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rb_femalename"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+
+                    android:layout_toRightOf="@id/rb_malename"
+                    android:text="Female"
+                    android:textStyle="bold" />
             <com.google.android.material.radiobutton.MaterialRadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/rb_malename"
-                android:text="Male"
-                android:textStyle="bold"
-                />
-            <com.google.android.material.radiobutton.MaterialRadioButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/rb_femalename"
-                android:text="Female"
-                android:textStyle="bold"
-                />
-            <com.google.android.material.radiobutton.MaterialRadioButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+
+
                 android:id="@+id/rb_tran_gender"
                 android:text="Transgendar"
                 android:textStyle="bold"
@@ -142,6 +160,9 @@
 
 
         </RadioGroup>
+
+
+
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -152,44 +173,63 @@
             android:textColor="@color/purple_200">
         </com.google.android.material.textview.MaterialTextView>
 
+             <RelativeLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 >
 
+                 <com.google.android.material.checkbox.MaterialCheckBox
+                     android:id="@+id/cb_coding"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Coding"
 
-            <com.google.android.material.checkbox.MaterialCheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/cb_coding"
-                android:text="Coding"
-                android:textStyle="bold"/>
+                     android:textStyle="bold" />
             <com.google.android.material.checkbox.MaterialCheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/cb_play_cricket"
+               android:layout_marginRight="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/cb_coding"
                 android:text="Playing cricket"
                 android:textStyle="bold"/>
-            <com.google.android.material.checkbox.MaterialCheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/cb_tavling"
-                android:text="Traveling"
-                android:textStyle="bold"/>
+
+                 <com.google.android.material.checkbox.MaterialCheckBox
+                     android:id="@+id/cb_tavling"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+
+                     android:layout_marginLeft="10dp"
+                     android:layout_toRightOf="@id/cb_play_cricket"
+                     android:text="Traveling"
+                     android:textStyle="bold" />
             <com.google.android.material.checkbox.MaterialCheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/cb_reading_nobel"
+                android:layout_below="@+id/cb_coding"
                 android:text="Reading noble"
                 android:textStyle="bold"/>
             <com.google.android.material.checkbox.MaterialCheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Gaming"
+                android:layout_below="@+id/cb_play_cricket"
+                android:layout_toRightOf="@id/cb_reading_nobel"
+                android:layout_marginLeft="25dp"
                 android:id="@+id/cb_gaming"
                 android:textStyle="bold"/>
+             </RelativeLayout>
 
         <com.google.android.material.button.MaterialButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/rb_submit"
             android:text="Submit"
+            app:cornerRadius="15dp"
+            android:layout_marginTop="10dp"
+
             android:layout_gravity="center"/>
 
 
