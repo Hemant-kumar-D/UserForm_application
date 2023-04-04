@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".LoginActivity">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+            app:startIconDrawable="@drawable/baseline_person_24"
+            app:layout_constraintTop_toTopOf="parent"
+
+            android:id="@+id/edit_fname"
+            app:counterEnabled="true"
+            app:errorEnabled="true"
+            android:hint="FirstName">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:maxLength="15"
+                android:inputType="textCapWords"
+
+
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+            app:startIconDrawable="@drawable/baseline_person_24"
+            app:layout_constraintTop_toBottomOf="@id/edit_fname"
+
+            android:id="@+id/edit_lastname"
+            app:counterEnabled="true"
+            app:errorEnabled="true"
+            android:hint="LastName"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:maxLength="15"
+                android:inputType="textCapWords"
+
+
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+            app:startIconDrawable="@drawable/baseline_add_ic_call_24"
+
+            android:id="@+id/edit_monumber"
+            app:layout_constraintTop_toBottomOf="@id/edit_lastname"
+            app:counterEnabled="true"
+            app:errorEnabled="true"
+            android:hint="Mo.Number"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:maxLength="15"
+                android:inputType="number"
+
+
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+       <androidx.appcompat.widget.AppCompatButton
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           app:layout_constraintTop_toBottomOf="@id/edit_monumber"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           android:text="Login"
+           android:textStyle="bold"
+           android:layout_marginTop="10dp"
+           android:id="@+id/btn_login"
+           >
+
+       </androidx.appcompat.widget.AppCompatButton>
+        <androidx.appcompat.widget.AppCompatCheckedTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_login"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/sign_text"
+
+            app:layout_constraintEnd_toEndOf="@id/btn_login"
+
+            android:layout_marginTop="25dp"
+            android:text="I have already account"></androidx.appcompat.widget.AppCompatCheckedTextView>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign In"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="40dp"
+            android:id="@+id/btn_sign_in"
+            app:layout_constraintStart_toEndOf="@id/sign_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_login"
+            ></androidx.appcompat.widget.AppCompatButton>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
