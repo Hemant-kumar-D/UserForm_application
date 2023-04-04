@@ -11,10 +11,11 @@ class sharedprefrenceviewmodel(private  var shardprerep:sharedprefrence,private 
         shardprerep.getprefrence(context).edit().putString(keys.LNAME,lastname).commit()
         shardprerep.getprefrence(context).edit().putInt(keys.MOBNO.toString(),monumber).commit()
     }
-    fun getdata(){
-        val username=shardprerep.getprefrence(context).getString(keys.FNAME,"")
-        val lasname=shardprerep.getprefrence(context).getString(keys.LNAME,"")
+    fun getdata():Int{
+//        val username=shardprerep.getprefrence(context).getString(keys.FNAME,"")
+////        val lasname=shardprerep.getprefrence(context).getString(keys.LNAME,"")
         val monumb=shardprerep.getprefrence(context).getInt(keys.MOBNO.toString(),0)
+        return monumb
     }
 
 }

@@ -12,14 +12,15 @@ import com.example.ragis_form_mate_ui.databinding.ActivityLoginBinding
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding:ActivityLoginBinding
     private lateinit var viewModel: sharedprefrenceviewmodel
-    private lateinit var factory:sharedprefrenceviewmodel
+    private lateinit var factory:viewmodelfactory
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        viewModel = ViewModelProvider(this)[sharedprefrenceviewmodel::class.java]
+        factory=viewmodelfactory(sharedprefrence,this)
+        viewModel = ViewModelProvider(this,factory)[sharedprefrenceviewmodel::class.java]
 
-        factory=sharedprefrenceviewmodel(sharedprefrence,this)
+
 
 
 
@@ -32,6 +33,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(p0: View?) {
         when(p0?.id){
             R.id.btn_sign_in ->{
+                viewModel.savedata(binding.editFname.editText?.text.toString(),binding.editLastname.editText?.text.toString(),
+                    binding.editMonumber.editText?.text.toString().toInt())
 
                 intent=Intent(this,SignActivity::class.java)
                 startActivity(intent)
