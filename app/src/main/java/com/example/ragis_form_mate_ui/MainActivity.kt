@@ -7,12 +7,13 @@ import android.view.View
 import android.widget.CompoundButton
 import android.widget.RadioGroup
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
 import com.example.ragis_form_mate_ui.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener,
     CompoundButton.OnCheckedChangeListener, View.OnClickListener {
-     lateinit var binding:ActivityMainBinding// object hai xml file jo sari id ko hold kerke rakhta ha
+    private lateinit var binding:ActivityMainBinding// object hai xml file jo sari id ko hold kerke rakhta ha
     var gender:String?= null
     var arraylist:ArrayList<String> = ArrayList()
 
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener,
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
        // binding= ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+       binding=DataBindingUtil.setContentView(this,R.layout.activity_main)
 
         binding.rdGroup.setOnCheckedChangeListener(this)
         binding.cbCoding.setOnCheckedChangeListener(this)

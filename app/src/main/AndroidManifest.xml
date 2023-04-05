@@ -8,8 +8,9 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true"
         android:theme="@style/Theme.Ragis_Form_Mate_UI"
+        android:supportsRtl="true"
+
         tools:targetApi="31">
         <activity
             android:name=".SignActivity"
@@ -23,16 +24,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<!--        <activity-->
-<!--            android:name=".ui.login.LoginActivityR_Form"-->
-<!--            android:exported="false"-->
-<!--            android:label="@string/title_activity_login_rform" />-->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login_rform" />
         <activity
             android:name=".Secound_Activity"
             android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false"/>
+<!--        <activity-->
+<!--            android:name=".MainActivity"-->
+<!--            android:exported="false"/>-->
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 

@@ -10,9 +10,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.ragis_form_mate_ui.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
-    private lateinit var binding:ActivityLoginBinding
-    private lateinit var viewModel: sharedprefrenceviewmodel
-    private lateinit var factory:viewmodelfactory
+     private lateinit var binding:ActivityLoginBinding
+     lateinit var viewModel: sharedprefrenceviewmodel
+     lateinit var factory:viewmodelfactory
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityLoginBinding.inflate(layoutInflater)
@@ -33,22 +33,28 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(p0: View?) {
         when(p0?.id){
             R.id.btn_sign_in ->{
-                viewModel.savedata(binding.editFname.editText?.text.toString(),binding.editLastname.editText?.text.toString(),
-                    binding.editMonumber.editText?.text.toString().toInt())
 
-                intent=Intent(this,SignActivity::class.java)
-                startActivity(intent)
+
+
+                startActivity(Intent(this,SignActivity::class.java))
             }
             R.id.btn_login->{
-                if(!binding.editFname.editText!!.text.isEmpty()&& !binding.editLastname.editText!!.text.isEmpty()&&!binding.editMonumber.editText!!.text.isEmpty()){
 
-                    intent= Intent(this,MainActivity::class.java)
-                    startActivity(intent)
+              if(binding.editFname.text.toString().isEmpty()&&binding.editLastname.text.toString()
+                      .isEmpty()&&binding.editMonumber.text.toString().isEmpty()){
+                  Toast.makeText(this, "Please fill value", Toast.LENGTH_SHORT).show()
 
-                }
+              }
                 else{
-                    Toast.makeText(this, "Please enter all field", Toast.LENGTH_SHORT).show()
-                }
+                  Toast.makeText(this, "succesfully ragisterd", Toast.LENGTH_SHORT).show()
+                  viewModel.savedata(binding.editFname.text.toString(),binding.editLastname.text.toString(),
+                      binding.editMonumber.text.toString())
+
+                  startActivity(Intent(this,MainActivity::class.java))
+              }
+
+
+
             }
 
         }

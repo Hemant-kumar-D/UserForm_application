@@ -14,13 +14,14 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
+            android:id="@+id/layout_fname"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
             app:startIconDrawable="@drawable/baseline_person_24"
             app:layout_constraintTop_toTopOf="parent"
 
-            android:id="@+id/edit_fname"
+
             app:counterEnabled="true"
             app:errorEnabled="true"
             android:hint="FirstName">
@@ -29,19 +30,20 @@
                 android:maxLength="15"
                 android:inputType="textCapWords"
 
-
+                android:id="@+id/edit_fname"
                 android:layout_height="wrap_content" />
 
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/layout_lname"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
             app:startIconDrawable="@drawable/baseline_person_24"
-            app:layout_constraintTop_toBottomOf="@id/edit_fname"
+            app:layout_constraintTop_toBottomOf="@id/layout_fname"
 
-            android:id="@+id/edit_lastname"
+
             app:counterEnabled="true"
             app:errorEnabled="true"
             android:hint="LastName"
@@ -50,6 +52,7 @@
                 android:layout_width="match_parent"
                 android:maxLength="15"
                 android:inputType="textCapWords"
+                android:id="@+id/edit_lastname"
 
 
                 android:layout_height="wrap_content" />
@@ -58,12 +61,13 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/layout_number"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
             app:startIconDrawable="@drawable/baseline_add_ic_call_24"
 
-            android:id="@+id/edit_monumber"
-            app:layout_constraintTop_toBottomOf="@id/edit_lastname"
+
+            app:layout_constraintTop_toBottomOf="@id/layout_lname"
             app:counterEnabled="true"
             app:errorEnabled="true"
             android:hint="Mo.Number"
@@ -72,6 +76,7 @@
                 android:layout_width="match_parent"
                 android:maxLength="15"
                 android:inputType="number"
+                android:id="@+id/edit_monumber"
 
 
                 android:layout_height="wrap_content" />
@@ -80,7 +85,7 @@
        <androidx.appcompat.widget.AppCompatButton
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           app:layout_constraintTop_toBottomOf="@id/edit_monumber"
+           app:layout_constraintTop_toBottomOf="@id/layout_number"
            app:layout_constraintStart_toStartOf="parent"
            app:layout_constraintEnd_toEndOf="parent"
            android:text="Login"
