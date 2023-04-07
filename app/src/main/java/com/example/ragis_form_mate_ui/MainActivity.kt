@@ -3,6 +3,8 @@ package com.example.ragis_form_mate_ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.CompoundButton
 import android.widget.RadioGroup
@@ -180,6 +182,23 @@ class MainActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener,
             }
         }
 
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.menuitem, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+            R.id.menu_logout ->{
+
+            }
+            R.id.user_information ->{
+
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 

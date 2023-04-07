@@ -24,7 +24,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
 
 
-        binding.btnSignIn.setOnClickListener(this)
+        binding.textSignin.setOnClickListener(this)
         binding.btnLogin.setOnClickListener(this)
 
 
@@ -32,7 +32,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(p0: View?) {
         when(p0?.id){
-            R.id.btn_sign_in ->{
+            R.id.text_signin ->{
 
 
 
